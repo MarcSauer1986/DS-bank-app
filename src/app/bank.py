@@ -16,8 +16,6 @@ class Bank:
             'subject': subject,
             'amount': amount
         }
-        assert sender in self.transactions, 'Sender has no account yet!'
-        assert recipient in self.transactions, 'Recipient has no account yet!'
         assert amount > 0, 'Amount has to be greater than 0'
         self.transactions.append(_transaction)
         return _transaction
