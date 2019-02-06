@@ -19,10 +19,10 @@ class Bank:
         assert self._account_exists(recipient), 'Recipient has no account yet!'
 
         transaction = {
-            'sender':sender,
+            'sender': sender,
             'recipient': recipient,
-            'subject':subject,
-            'amount':amount
+            'subject': subject,
+            'amount': amount
         }
         self.transactions.append(transaction)
         return transaction
@@ -33,5 +33,3 @@ class Bank:
             self.accounts))
 
         return matches and len(matches) == 1
-
-
