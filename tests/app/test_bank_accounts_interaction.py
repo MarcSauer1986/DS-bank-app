@@ -45,7 +45,7 @@ class TestBankInitialization(unittest.TestCase):
 
         self.assertTrue(bank.accounts.equals(accounts))
 
-    Extra Task
+    # Extra Task
     def test_open_account_number_needs_to_be_unique(self):
         bank = app.Bank('GLS')
 
