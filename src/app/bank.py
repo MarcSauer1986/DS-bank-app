@@ -1,6 +1,5 @@
 import app
 
-
 class Bank:
     def __init__(self, name):
         self.name = name
@@ -13,13 +12,22 @@ class Bank:
         self.accounts[account.number] = account
         return account
 
-    def add_transaction(self, *, sender, recipient, subject, amount):
+    def add_transaction(self, *, sender, recipient, subject, amount, category):
         assert amount > 0, 'Amount needs to be greater than 0'
         assert sender.number in self.accounts, 'Sender has no account yet!'
         assert recipient.number in self.accounts, 'Recipient has no account yet!'
         assert self.accounts[sender.number].has_funds_for(amount), 'Account has not enough funds'
         self.transactions.append(app.Transaction(sender=sender.number, recipient=recipient.number, subject=subject,
-                                                 amount=amount))
+                                                 amount=amount, category=category))
         self.accounts[sender.number].subtract_from_balance(amount)
         self.accounts[recipient.number].add_to_balance(amount)
         return self.transactions[-1]
+
+    def print_statement(self):
+        self.transactions = all_transactions
+
+    def sort_transaction(self):
+
+    def group_transaction
+
+    def filter_transaction
